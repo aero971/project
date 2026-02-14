@@ -14,4 +14,9 @@ public class SomeTest {
         LocalTime time = LocalTime.now();
         return "<h1>Shree swami samarth </h1> <br> Currunt date  = "+ ld +"<br> Currunt time  = "+ time ;
     }
+
+    public String op()
+    {
+        return "op";
+    }
 }
