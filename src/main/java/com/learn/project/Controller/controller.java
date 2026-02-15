@@ -1,4 +1,4 @@
-package com.learn.project;
+package com.learn.project.Controller;
 
 import com.learn.project.entity.Player;
 import org.springframework.web.bind.annotation.*;
@@ -18,12 +18,12 @@ public class controller {
         return new ArrayList<>(supes.values());
     }
 
-    @PostMapping
-    public boolean SetPlayer(@RequestBody Player player)
-    {
-        supes.put(player.getId(),player);
-        return true;
-    }
+//    @PostMapping
+//    public boolean SetPlayer(@RequestBody Player player)
+//    {
+//        supes.put(player.getId(),player);
+//        return true;
+//    }
 
     @GetMapping("/id/{supId}")
     public Player getPlayerById(@PathVariable Long supId )

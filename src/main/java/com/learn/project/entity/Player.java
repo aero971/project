@@ -1,8 +1,19 @@
 package com.learn.project.entity;
 
+import org.bson.types.ObjectId;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.PrimitiveIterator;
+
+@Document(collection = "players_entries")
 public class Player {
 
-    private long id;
+    @Id
+    private ObjectId id;
+//    private String id;
 
     private String name;
 
@@ -10,13 +21,32 @@ public class Player {
 
     private String level;
 
-    public long getId() {
+    public LocalDateTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalDateTime dateTime) {
+        this.dateTime = dateTime;
+    }
+
+    private LocalDateTime dateTime;
+
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
+
+
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;
