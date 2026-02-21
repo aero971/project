@@ -8,7 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-import java.time.*;
 
 @Component
 public class PlayerService {
@@ -41,7 +40,7 @@ public class PlayerService {
         playerRepo.deleteById(id);
     }
 
-    public void UpdatePlayer(Player newPlayer,ObjectId id)
+    public Player UpdatePlayer(Player newPlayer, ObjectId id)
     {
 
         Player existingPlayer = findPlayerById(id).orElse(null);
@@ -64,6 +63,7 @@ public class PlayerService {
 
             playerRepo.save(existingPlayer);
         }
+        return existingPlayer;
     }
 
 }
